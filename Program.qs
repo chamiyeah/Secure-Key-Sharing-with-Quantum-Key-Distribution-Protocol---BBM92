@@ -1,10 +1,14 @@
-namespace Secure_Key_Sharing_with_Quantum_Key_Distribution_Protocol_BBM92 {
+// QuantumKeyDistribution.qs
 
-    open Microsoft.Quantum.Canon;
+namespace QuantumKeyDistribution {
+
     open Microsoft.Quantum.Intrinsic;
-    
-    @EntryPoint()
-    operation SayHello() : Unit {
-        Message("Hello quantum world!");
-    }
-}
+
+    // BBM92 Protocol: Champ sends qubits to Pakaya, and they perform measurements to establish a shared key.
+    operation BBM92Protocol() : (Result, Result) {
+        // Champ prepares an entangled state
+        use qubit1 = Qubit();
+        use qubit2 = Qubit();
+        H(qubit1);
+        CNOT(qubit1, qubit2);
+
