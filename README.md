@@ -8,17 +8,16 @@ In this real-world scenario, Champ (Sender) and Pakaya (Reciver) would typically
 
 In this code, Champ prepares an entangled state and randomly measures one of the qubits. Pakaya measures the other qubit. They then compare their measurement results to detect any potential eavesdropping. If their measurements match, a secure key is established.
 
-## Here's a high-level overview of how this QKD protocol work in action :##
+## Here's a high-level overview of how this QKD protocol work in action ##
 
-    ### Quantum Channel ###
-        Champ and Pakaya have a quantum channel between them, which could be implemented using fiber optic cables or other quantum communication technologies.
+### Quantum Channel ###
+Champ and Pakaya have a quantum channel between them, which could be implemented using fiber optic cables or other quantum communication technologies.
 
-    ### Classical Communication Channel ###
-        In addition to the quantum channel, Champ and Pakaya also have a classical communication channel, which can be used for exchanging classical information.
+### Classical Communication Channel ###
+In addition to the quantum channel, Champ and Pakaya also have a classical communication channel, which can be used for exchanging classical information.
 
-    ### Key Exchange Protocol ###
-
-        Champ performs the quantum entanglement operations locally and sends the qubits (quantum bits) to Pakaya over the quantum channel.
+### Key Exchange Protocol ###
+Champ performs the quantum entanglement operations locally and sends the qubits (quantum bits) to Pakaya over the quantum channel.
 
         ```
         operation BBM92Protocol() : (Result, Result) {
@@ -30,7 +29,7 @@ In this code, Champ prepares an entangled state and randomly measures one of the
 
          ```
 
-        Pakaya receives the qubits, performs the necessary quantum operations on his end, and measures the qubits.
+Pakaya receives the qubits, performs the necessary quantum operations on his end, and measures the qubits.
 
          ```
 
@@ -38,9 +37,9 @@ In this code, Champ prepares an entangled state and randomly measures one of the
 
          ```
 
-        Both Champ and Pakaya communicate the basis used for their measurements over the classical channel.
+Both Champ and Pakaya communicate the basis used for their measurements over the classical channel.
 
-        Champ and Pakaya compare a subset of their measurement results over the classical channel to check for discrepancies. If the measurements match, it indicates the absence of eavesdropping, and they proceed to use the matching results as a secure shared key.
+Champ and Pakaya compare a subset of their measurement results over the classical channel to check for discrepancies. If the measurements match, it indicates the absence of eavesdropping, and they proceed to use the matching results as a secure shared key.
 
         ```
 
@@ -57,10 +56,10 @@ In this code, Champ prepares an entangled state and randomly measures one of the
 
         ```
 
-        If discrepancies are detected, it may indicate eavesdropping, and they may decide to abort the key exchange or take appropriate actions.
+If discrepancies are detected, it may indicate eavesdropping, and they may decide to abort the key exchange or take appropriate actions.
 
-    ### Secure Communication ###
-        Once the secure key is established, Champ and Pakaya can use it to encrypt their classical communication over the classical channel. This shared key can be used with symmetric-key encryption algorithms to encrypt and decrypt messages.
+### Secure Communication ###
+Once the secure key is established, Champ and Pakaya can use it to encrypt their classical communication over the classical channel. This shared key can be used with symmetric-key encryption algorithms to encrypt and decrypt messages.
 
 In this way, the quantum communication establishes a secure key between Champ and Pakaya, and the classical communication is used to exchange information about the quantum measurements and to verify the security of the key.
 
