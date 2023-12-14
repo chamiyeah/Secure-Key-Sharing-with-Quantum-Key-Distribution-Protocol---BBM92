@@ -10,6 +10,9 @@ In this code, Champ prepares an entangled state and randomly measures one of the
 
 ## Here's a high-level overview of how this QKD protocol work in action ##
 
+### Libraries ###
+        Microsoft.Quantum.Intrinsic
+
 ### Quantum Channel ###
 Champ and Pakaya have a quantum channel between them, which could be implemented using fiber optic cables or other quantum communication technologies.
 
@@ -19,7 +22,6 @@ In addition to the quantum channel, Champ and Pakaya also have a classical commu
 ### Key Exchange Protocol ###
 Champ performs the quantum entanglement operations locally and sends the qubits (quantum bits) to Pakaya over the quantum channel.
 
-        ```
         operation BBM92Protocol() : (Result, Result) {
        
         use qubit1 = Qubit();
@@ -27,21 +29,14 @@ Champ performs the quantum entanglement operations locally and sends the qubits 
         H(qubit1);
         CNOT(qubit1, qubit2);
 
-         ```
-
 Pakaya receives the qubits, performs the necessary quantum operations on his end, and measures the qubits.
-
-         ```
 
         let measurementPakaya = M(qubit2);
 
-         ```
 
 Both Champ and Pakaya communicate the basis used for their measurements over the classical channel.
 
 Champ and Pakaya compare a subset of their measurement results over the classical channel to check for discrepancies. If the measurements match, it indicates the absence of eavesdropping, and they proceed to use the matching results as a secure shared key.
-
-        ```
 
          // Run the BBM92 Protocol
          
@@ -54,7 +49,6 @@ Champ and Pakaya compare a subset of their measurement results over the classica
             Message("Eavesdropping detected! Abort key exchange.");
         }
 
-        ```
 
 If discrepancies are detected, it may indicate eavesdropping, and they may decide to abort the key exchange or take appropriate actions.
 
